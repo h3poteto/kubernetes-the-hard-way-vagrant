@@ -1,2 +1,7 @@
 .vagrant
+*.csr
+*csr.json
+*.pem
+ca-config.json
+
 
