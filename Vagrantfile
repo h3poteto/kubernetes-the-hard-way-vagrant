@@ -14,7 +14,7 @@ Vagrant.configure("2") do |config|
   # boxes at https://vagrantcloud.com/search.
   config.vm.box = "archlinux/archlinux"
 
-  
+  config.vm.boot_timeout = 600  
   
   config.vm.define "master" do |c|
     c.vm.hostname = "master"
@@ -84,7 +84,7 @@ Vagrant.configure("2") do |config|
     pacman-key --populate archlinux
     pacman -Sy --noconfirm
     pacman -S docker --noconfirm
-    pacman -S git base-devel --noconfirm 
+    pacman -S git base-devel wget --noconfirm 
     systemctl enable docker
     systemctl start docker
     usermod -aG docker vagrant
