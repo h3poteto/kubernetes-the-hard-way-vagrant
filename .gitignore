@@ -4,4 +4,6 @@
 *.pem
 ca-config.json
 *.kubeconfig
+encryption-config.yaml
+
 
