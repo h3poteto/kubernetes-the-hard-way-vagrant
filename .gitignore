@@ -3,5 +3,5 @@
 *csr.json
 *.pem
 ca-config.json
-
+*.kubeconfig
 
