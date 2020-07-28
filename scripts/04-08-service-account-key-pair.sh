@@ -1,5 +1,5 @@
 #!/bin/bash
-
+# Run in master
 
 cat > service-account-csr.json <<EOF
 {

@@ -1,5 +1,5 @@
 #!/bin/bash
-
+# Run in master
 
 KUBERNETES_PUBLIC_ADDRESS=10.240.0.10
 

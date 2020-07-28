@@ -1,4 +1,5 @@
 #!/bin/bash
+# Run in first master
 
 sudo pacman -Sy --noconfirm
 sudo pacman -S nginx --noconfirm

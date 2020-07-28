@@ -1,4 +1,5 @@
 #!/bin/bash
+# Run in master
 
 wget -q --show-progress --https-only --timestamping \
   https://storage.googleapis.com/kubernetes-the-hard-way/cfssl/1.4.1/linux/cfssl \

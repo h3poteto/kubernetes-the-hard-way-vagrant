@@ -1,4 +1,5 @@
 #!/bin/bash
+# Run in each master
 
 sudo mv kube-controller-manager.kubeconfig /var/lib/kubernetes/
 

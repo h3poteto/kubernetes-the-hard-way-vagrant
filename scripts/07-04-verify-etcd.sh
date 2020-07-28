@@ -1,4 +1,5 @@
 #!/bin/bash
+# Run in first master
 
 sudo ETCDCTL_API=3 etcdctl member list \
 	--endpoints=https://127.0.0.1:2379 \

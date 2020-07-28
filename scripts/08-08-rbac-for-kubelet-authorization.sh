@@ -1,4 +1,5 @@
 #!/bin/bash
+# Run in first master
 
 cat <<EOF | kubectl apply --kubeconfig admin.kubeconfig -f -
 apiVersion: rbac.authorization.k8s.io/v1beta1

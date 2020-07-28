@@ -1,4 +1,5 @@
 #!/bin/bash
+# Run in master
 
 ENCRYPTION_KEY=$(head -c 32 /dev/urandom | base64)
 

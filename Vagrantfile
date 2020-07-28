@@ -22,10 +22,16 @@ Vagrant.configure("2") do |config|
     c.vm.network "private_network", ip: "10.240.0.10"
   end
 
+  config.vm.define "node-0" do |c|
+    c.vm.hostname = "node-0"
+
+    c.vm.network "private_network", ip: "10.240.0.20"
+  end
+
   config.vm.define "node-1" do |c|
     c.vm.hostname = "node-1"
 
-    c.vm.network "private_network", ip: "10.240.0.20"
+    c.vm.network "private_network", ip: "10.240.0.21"
   end
   
   
@@ -83,10 +89,15 @@ Vagrant.configure("2") do |config|
   config.vm.provision "shell", inline: <<-SHELL
     pacman-key --populate archlinux
     pacman -Sy --noconfirm
-    pacman -S docker --noconfirm
-    pacman -S git base-devel wget --noconfirm 
+    pacman -S docker cri-o --noconfirm
+    pacman -S git base-devel wget --noconfirm
+    pacman -S ebtables ethtool socat conntrack-tools ipset --noconfirm 
     systemctl enable docker
     systemctl start docker
     usermod -aG docker vagrant
+    swapoff -a
+    cat /etc/fstab
+    sudo sed -ri '/\\sswap\\s/s/^#?/#/' /etc/fstab
+    cat /etc/fstab
   SHELL
 end

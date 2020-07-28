@@ -1,4 +1,5 @@
 #!/bin/bash
+# Run in first master
 
 kubectl get componentstatuses --kubeconfig admin.kubeconfig
 

@@ -1,4 +1,5 @@
 #!/bin/bash
+# Run in master
 
 cat > ca-config.json <<EOF
 {

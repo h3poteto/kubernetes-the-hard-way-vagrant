@@ -1,9 +1,10 @@
 #!/bin/bash
+# Run in master
 
 KUBERNETES_PUBLIC_ADDRESS=10.240.0.10
 
 
-for instance in node-1; do
+for instance in node-0 node-1; do
 	kubectl config set-cluster kubernetes-the-hard-way \
 		--certificate-authority=ca.pem \
 	  	--embed-certs=true \

@@ -1,4 +1,5 @@
 #!/bin/bash
+# Run in master
 
 KUBERNETES_PUBLIC_ADDRESS=10.240.0.10
 KUBERNETES_HOSTNAMES=kubernetes,kubernetes.default,kubernetes.default.svc,kubernetes.default.svc.cluster,kubernetes.svc.cluster.local

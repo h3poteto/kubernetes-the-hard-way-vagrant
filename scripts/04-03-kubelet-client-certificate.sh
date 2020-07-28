@@ -1,6 +1,7 @@
 #!/bin/bash
+# Run in master
 
-for instance in node-1; do
+for instance in node-0 node-1; do
 cat > ${instance}-csr.json <<EOF
 {
   "CN": "system:node:${instance}",

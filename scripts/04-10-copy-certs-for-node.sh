@@ -1,7 +1,8 @@
 #!/bin/bash
+# Run in host OS
 
-for instance in node-1; do
-  cp ca.pem ~/ca.pem
-  cp ${instance}-key.pem ~/${instance}-key.pem
-  cp ${instance}.pem ~/${instance}.pem
+for instance in node-0 node-1; do
+  vagrant scp ca.pem ${instance}:~/
+  vagrant scp ${instance}-key.pem ${instance}:~/
+  vagrant scp ${instance}.pem ${instance}:~/
 done

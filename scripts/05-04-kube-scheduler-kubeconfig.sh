@@ -1,5 +1,5 @@
 #!/bin/bash
-
+# Run in master
 
 kubectl config set-cluster kubernetes-the-hard-way \
 	--certificate-authority=ca.pem \

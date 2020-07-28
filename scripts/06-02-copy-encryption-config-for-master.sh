@@ -1,4 +1,8 @@
 #!/bin/bash
+# Run in master
 
-cp encryption-config.yaml ~/
+for instance in master; do
+	vagrant scp encryption-config.yaml ${instance}:~/
+done
+
 

@@ -1,4 +1,5 @@
 #!/bin/bash
+# Run in eatch master
 
 sudo mkdir -p /etc/kubernetes/config
 

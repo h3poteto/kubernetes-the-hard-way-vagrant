@@ -1,4 +1,5 @@
 #!/bin/bash
+# Run in each master
 
 sudo mkdir -p /var/lib/kubernetes/
 
