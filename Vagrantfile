@@ -91,7 +91,7 @@ Vagrant.configure("2") do |config|
     pacman -Sy --noconfirm
     pacman -S docker cri-o --noconfirm
     pacman -S git base-devel wget --noconfirm
-    pacman -S ebtables ethtool socat conntrack-tools ipset --noconfirm 
+    pacman -S ebtables ethtool socat conntrack-tools ipset net-tools --noconfirm 
     systemctl enable docker
     systemctl start docker
     usermod -aG docker vagrant
