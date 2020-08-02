@@ -87,17 +87,26 @@ Vagrant.configure("2") do |config|
   # Ansible, Chef, Docker, Puppet and Salt are also available. Please see the
   # documentation for more information about their specific syntax and use.
   config.vm.provision "shell", inline: <<-SHELL
-    pacman-key --populate archlinux
-    pacman -Sy --noconfirm
-    pacman -S docker cri-o --noconfirm
-    pacman -S git base-devel wget --noconfirm
-    pacman -S ebtables ethtool socat conntrack-tools ipset net-tools --noconfirm 
-    systemctl enable docker
-    systemctl start docker
-    usermod -aG docker vagrant
-    swapoff -a
-    cat /etc/fstab
-    sudo sed -ri '/\\sswap\\s/s/^#?/#/' /etc/fstab
-    cat /etc/fstab
+pacman-key --populate archlinux
+pacman -Sy --noconfirm
+pacman -S docker --noconfirm
+pacman -S git base-devel wget --noconfirm
+pacman -S ebtables ethtool socat conntrack-tools ipset net-tools --noconfirm 
+systemctl enable docker
+systemctl start docker
+usermod -aG docker vagrant
+swapoff -a
+cat /etc/fstab
+sudo sed -ri '/\\sswap\\s/s/^#?/#/' /etc/fstab
+cat /etc/fstab
+
+cat >/etc/hosts <<EOF
+127.0.0.1       localhost
+
+# KTHW Vagrant machines
+10.240.0.10     master
+10.240.0.20     node-0
+10.240.0.21     node-1
+EOF
   SHELL
 end

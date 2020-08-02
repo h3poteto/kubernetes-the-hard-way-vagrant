@@ -18,13 +18,13 @@ sudo mkdir -p \
 	/var/lib/kubernetes \
 	/var/run/kubernetes
 
-mkdir containerd
+mkdir -p containerd
 tar -xvf crictl-v1.18.0-linux-amd64.tar.gz
 tar -xvf containerd-1.3.6-linux-amd64.tar.gz -C containerd
 sudo tar -xvf cni-plugins-linux-amd64-v0.8.6.tgz -C /opt/cni/bin/
 sudo mv runc.amd64 runc
 chmod +x crictl kubectl kube-proxy kubelet runc 
-sudo mv crictl kubectl kube-proxy kubelet runc /usr/local/bin/
+sudo mv crictl kubectl kube-proxy kubelet runc /usr/bin/
 sudo mv containerd/bin/* /bin/
-
+rm -rf containerd
 
