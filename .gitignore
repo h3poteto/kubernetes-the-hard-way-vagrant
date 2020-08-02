@@ -5,6 +5,8 @@
 ca-config.json
 *.kubeconfig
 encryption-config.yaml
-etcd-*.tar.gz
+*.tar.gz
 etcd-*/
+*.tgz
+
 
