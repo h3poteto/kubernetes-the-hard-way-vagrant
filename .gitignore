@@ -8,5 +8,5 @@ encryption-config.yaml
 *.tar.gz
 etcd-*/
 *.tgz
-
+*.yaml
 

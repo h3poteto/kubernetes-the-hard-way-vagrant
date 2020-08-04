@@ -2,6 +2,6 @@
 # Run in each worker
 
 sudo systemctl daemon-reload
-sudo systemctl enable containerd kubelet kube-proxy
-sudo systemctl start containerd kubelet kube-proxy
+sudo systemctl enable kubelet kube-proxy
+sudo systemctl start kubelet kube-proxy
 
