@@ -27,6 +27,10 @@ Vagrant.configure("2") do |config|
     c.vm.hostname = "node-0"
 
     c.vm.network "private_network", ip: "10.240.0.20"
+
+    for i in 30000..32767
+      c.vm.network :forwarded_port, guest: i, host: i
+    end
   end
 
   config.vm.define "node-1" do |c|
