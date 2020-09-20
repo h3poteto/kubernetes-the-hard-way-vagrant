@@ -1,7 +1,7 @@
 #!/bin/bash
 # Run in master
 
-KUBERNETES_PUBLIC_ADDRESS=192.168.11.7
+KUBERNETES_PUBLIC_ADDRESS=192.168.10.11
 
 kubectl config set-cluster kubernetes-the-hard-way \
 	--certificate-authority=ca.pem \

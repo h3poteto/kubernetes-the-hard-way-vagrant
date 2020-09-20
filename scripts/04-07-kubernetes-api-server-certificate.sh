@@ -1,7 +1,7 @@
 #!/bin/bash
 # Run in master
 
-KUBERNETES_EXTERNAL_ADDRESS=192.168.11.7
+KUBERNETES_EXTERNAL_ADDRESS=192.168.10.11
 KUBERNETES_PUBLIC_ADDRESS=10.240.0.10
 KUBERNETES_HOSTNAMES=kubernetes,kubernetes.default,kubernetes.default.svc,kubernetes.default.svc.cluster,kubernetes.svc.cluster.local
 
