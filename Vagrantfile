@@ -14,11 +14,12 @@ Vagrant.configure("2") do |config|
   # boxes at https://vagrantcloud.com/search.
   config.vm.box = "archlinux/archlinux"
 
-  config.vm.boot_timeout = 600  
+  config.vm.boot_timeout = 600 
   
   config.vm.define "master" do |c|
     c.vm.hostname = "master"
 
+    c.vm.network "public_network", ip: "192.168.10.20"
     c.vm.network "private_network", ip: "10.240.0.10"
     c.vm.network "forwarded_port", guest: 6443, host: 6443
   end
@@ -27,14 +28,14 @@ Vagrant.configure("2") do |config|
     c.vm.hostname = "node-0"
 
     c.vm.network "private_network", ip: "10.240.0.20"
-    c.vm.network "public_network"
+    c.vm.network "public_network", ip: "192.168.10.21"
   end
 
   config.vm.define "node-1" do |c|
     c.vm.hostname = "node-1"
 
     c.vm.network "private_network", ip: "10.240.0.21"
-    c.vm.network "public_network"
+    c.vm.network "public_network", ip: "192.168.10.22"
   end
   
   
