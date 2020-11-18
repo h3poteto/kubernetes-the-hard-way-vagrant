@@ -19,7 +19,7 @@ Vagrant.configure("2") do |config|
   config.vm.define "master" do |c|
     c.vm.hostname = "master"
 
-    c.vm.network "public_network", ip: "192.168.10.20"
+    # c.vm.network "public_network", ip: "192.168.10.20"
     c.vm.network "private_network", ip: "10.240.0.10"
     c.vm.network "forwarded_port", guest: 6443, host: 6443
   end
@@ -28,14 +28,14 @@ Vagrant.configure("2") do |config|
     c.vm.hostname = "node-0"
 
     c.vm.network "private_network", ip: "10.240.0.20"
-    c.vm.network "public_network", ip: "192.168.10.21"
+    # c.vm.network "public_network", ip: "192.168.10.21"
   end
 
   config.vm.define "node-1" do |c|
     c.vm.hostname = "node-1"
 
     c.vm.network "private_network", ip: "10.240.0.21"
-    c.vm.network "public_network", ip: "192.168.10.22"
+    # c.vm.network "public_network", ip: "192.168.10.22"
   end
   
   
@@ -94,7 +94,7 @@ Vagrant.configure("2") do |config|
 pacman-key --populate archlinux
 pacman -Sy --noconfirm
 pacman -S docker --noconfirm
-pacman -S git base-devel wget --noconfirm
+pacman -S glibc git base-devel wget --noconfirm
 pacman -S ebtables ethtool socat conntrack-tools ipset net-tools --noconfirm 
 systemctl enable docker
 systemctl start docker

@@ -21,6 +21,7 @@ ExecStart=/usr/bin/kube-controller-manager \\
   --service-account-private-key-file=/var/lib/kubernetes/service-account-key.pem \\
   --service-cluster-ip-range=10.32.0.0/24 \\
   --use-service-account-credentials=true \\
+  --allocate-node-cidrs \\
   --v=2
 Restart=on-failure
 RestartSec=5
