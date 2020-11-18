@@ -10,7 +10,7 @@ sudo mv cfssl cfssljson /usr/bin/
 cfssl version
 cfssljson --version
 
-wget https://storage.googleapis.com/kubernetes-release/release/v1.18.6/bin/linux/amd64/kubectl
+wget https://storage.googleapis.com/kubernetes-release/release/v1.19.4/bin/linux/amd64/kubectl
 chmod +x kubectl
 sudo mv kubectl /usr/bin/
 
